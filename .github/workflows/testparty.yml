@@ -1,0 +1,15 @@
+name: Accessibility Scan
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Every 5 minutes
+  workflow_dispatch:      # Allows manual triggers
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Accessibility Scan
+        uses: test-party/reporter@v1
+        with:
+          api_token: ${{ secrets.TESTPARTY_TOKEN }}
+          urls: 'https://www.understood.org,https://www.understood.org/blog/'
