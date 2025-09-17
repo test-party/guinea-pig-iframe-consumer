@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Accessibility Scan
-        uses: test-party/reporter@v1
+        uses: test-party/reporter@main
         with:
           api_token: ${{ secrets.TESTPARTY_TOKEN }}
           urls: 'https://www.understood.org,https://www.understood.org/blog/'
